@@ -1,2 +1,9 @@
-FROM ubuntu:trusty
-RUN apt-get update && apt-get install -y puppet htop wget curl
+FROM debian:wheezy
+RUN apt-get update && apt-get install -y \
+  htop \
+  wget \
+  curl \
+  git \
+  build-essential \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
